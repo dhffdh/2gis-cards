@@ -95,4 +95,7 @@ Vue.component('app-comp', {
 
 });
 
-var app = new Vue({el: '#app'});
+var app = new Vue({
+    el: '#app',
+    template: '<app-comp></app-comp>'
+});
