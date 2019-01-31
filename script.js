@@ -89,7 +89,7 @@ Vue.component('app-comp', {
     created: function () {
 
         if(!!cards)
-            this.items = cards; //подягиваем элементы из глобального массива cards
+            this.items = cards; //подтягиваем карточки из глобального массива cards
 
         this.pushState(); // Регистрируем начальный стейт в истории браузера
         window.onpopstate = this.onPopstateHandler; // подписываемся на переходы по истории
