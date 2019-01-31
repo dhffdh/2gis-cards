@@ -36,7 +36,6 @@ Vue.component('app-comp', {
 
         //ховер на бэкграунд
         onBgHover: function (e) {
-            //console.log(e.target);
             if(e.target.classList.contains('js-hover')){
                 this.isOver = true;
             }else{
@@ -46,7 +45,6 @@ Vue.component('app-comp', {
 
         //клик по карточке
         clickCardHandler: function (e) {
-            //console.log('clickCardHandler e.shiftKey , e.altKey:', e.shiftKey, e.altKey );
             if(!e.shiftKey && !e.altKey){
                 this.deleteCard();
             }else
@@ -60,21 +58,18 @@ Vue.component('app-comp', {
 
         // метод добавления карточки
         addCard: function (typeVal) {
-            //console.log('addCard', typeVal);
             this.items.push({ type: typeVal });
             this.pushState();
         },
 
         //удаление карточки
         deleteCard: function () {
-            //console.log('deleteCar');
             this.items.splice(-1,1);
             this.pushState();
         },
 
         //чтение стейта из истории браузера
         onPopstateHandler: function (event) {
-            //console.log('onPopstateHandler event.state', event.state);
             if(!!event.state){
                 this.items = event.state;
             }
@@ -82,7 +77,6 @@ Vue.component('app-comp', {
 
         //обновление стейта истории после добавления или удаления карточек
         pushState: function () {
-            //console.log('onPushState this.items,', this.items,);
             history.pushState(this.items, null, null );
         }
     },
