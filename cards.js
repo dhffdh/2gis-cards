@@ -5,4 +5,7 @@ var cards = [
     {
         type: 'wide'
     },
+    {
+        type: 'narrow'
+    },
 ];

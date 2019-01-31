@@ -13,7 +13,7 @@ Vue.component('app-comp', {
         }
     },
     template: `
-        <div class="b-container" v-bind:class="{ 'hover':  isOver}" v-on:mouseover="onHover" v-on:mouseleave="isOver = false">
+        <div class="b-container js-hover" v-bind:class="{ 'hover':  isOver}" v-on:mouseover="onHover" v-on:mouseleave="isOver = false">
             <ul class="b-list">
                 <li 
                     class="b-item" 
@@ -37,7 +37,7 @@ Vue.component('app-comp', {
         //ховер на бэкграунд
         onHover: function (e) {
             //console.log(e.target);
-            if(e.target.classList.contains('b-container')){
+            if(e.target.classList.contains('js-hover')){
                 this.isOver = true;
             }else{
                 this.isOver = false;
@@ -90,7 +90,7 @@ Vue.component('app-comp', {
 
         if(!!cards)
             this.items = cards; //подягиваем элементы из глобального массива cards
-        
+
         this.pushState(); // Регистрируем начальный стейт в истории браузера
         window.onpopstate = this.onPopstateHandler; // подписываемся на переходы по истории
     }
