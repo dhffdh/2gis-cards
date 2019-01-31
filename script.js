@@ -57,6 +57,7 @@ Vue.component('app-comp', {
                 this.addCard(cardTypes.wide);
             }
         },
+
         // метод добавления карточки
         addCard: function (typeVal) {
             //console.log('addCard', typeVal);
@@ -84,33 +85,14 @@ Vue.component('app-comp', {
             //console.log('onPushState this.items,', this.items,);
             history.pushState(this.items, null, null );
         }
-
     },
     created: function () {
-
         if(!!cards)
             this.items = cards; //подтягиваем карточки из глобального массива cards
-
         this.pushState(); // Регистрируем начальный стейт в истории браузера
         window.onpopstate = this.onPopstateHandler; // подписываемся на переходы по истории
     }
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 var app = new Vue({el: '#app'});

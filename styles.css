@@ -1,24 +1,22 @@
-html, body{
+html, body {
     height: 100%;
 }
 
-body{
+body {
     font-size: 14px;
     padding: 0;
     margin: 0;
-    height: 100%;
     width: 100%;
     min-height: 100vh;
-
     font-family: 'Arial', sans-serif;
-
     min-width: 320px;
-
 }
-*{
+
+* {
     box-sizing: border-box;
 }
-.b-app{
+
+.b-app {
     height: 100%;
     width: 100%;
     min-height: 100%;
@@ -26,23 +24,23 @@ body{
     flex-direction: column;
 }
 
-.b-container{
+.b-container {
     height: 100%;
     background-color: #f6f2de;
     position: relative;
 }
-.b-container.hover{
+
+.b-container.hover {
     background-color: #e9e6d3;
 }
 
-
-.b-list{
+.b-list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.b-item{
+.b-item {
     list-style: none;
     padding: 0;
     position: absolute;
@@ -62,7 +60,7 @@ body{
     margin: 20px 30px;
 }
 
-.b-item__number{
+.b-item__number {
     color: #000;
 
     font-size: 48px;
@@ -78,16 +76,17 @@ body{
     align-items: center;
     justify-content: center;
 }
-.b-item:last-child{
+
+.b-item:last-child {
     z-index: 1;
 }
-.b-item.active{
+
+.b-item.active {
     margin-left: 90px;
 }
 
-.b-item--wide.active{
+.b-item--wide.active {
     max-width: 960px;
-
 }
 
 
