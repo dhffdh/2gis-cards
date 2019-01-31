@@ -13,13 +13,13 @@ Vue.component('app-comp', {
         }
     },
     template: `
-        <div class="b-container js-hover" v-bind:class="{ 'hover':  isOver}" v-on:mouseover="onHover" v-on:mouseleave="isOver = false">
+        <div class="b-container js-hover" v-bind:class="{ 'hover':  isOver}" v-on:mouseover="onBgHover" v-on:mouseleave="isOver = false">
             <ul class="b-list">
                 <li 
                     class="b-item" 
                     v-for="(item, index) in items" 
-                    v-bind:class="[ 'b-item--'+item.type , isActive(index,items) ? 'active' : '' ]"
-                    v-on:click="clickHandler"
+                    v-bind:class="[ 'b-item--'+item.type , isCardActive(index,items) ? 'active' : '' ]"
+                    v-on:click="clickCardHandler"
                     >
                     <div class="b-item__number">{{ index+1 }}</div>
                 </li>
@@ -28,14 +28,14 @@ Vue.component('app-comp', {
     `,
     methods: {
         //определение последней активной карточки
-        isActive: function (index, list) {
+        isCardActive: function (index, list) {
             if(list.length === 1)
                 return false;
             return list.length === (index+1)
         },
 
         //ховер на бэкграунд
-        onHover: function (e) {
+        onBgHover: function (e) {
             //console.log(e.target);
             if(e.target.classList.contains('js-hover')){
                 this.isOver = true;
@@ -45,8 +45,8 @@ Vue.component('app-comp', {
         },
 
         //клик по карточке
-        clickHandler: function (e) {
-            //console.log('clickHandler e.shiftKey , e.altKey:', e.shiftKey, e.altKey );
+        clickCardHandler: function (e) {
+            //console.log('clickCardHandler e.shiftKey , e.altKey:', e.shiftKey, e.altKey );
             if(!e.shiftKey && !e.altKey){
                 this.deleteCard();
             }else
