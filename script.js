@@ -9,11 +9,11 @@ Vue.component('app-comp', {
     data: function () {
         return {
             items: [], //карточки
-            isOver: false // свойство-hover на бэкграунде
+            isHover: false // свойство-hover на бэкграунде
         }
     },
     template: `
-        <div class="b-container js-hover" v-bind:class="{ 'hover':  isOver}" v-on:mouseover="onBgHover" v-on:mouseleave="isOver = false">
+        <div class="b-container js-hover" v-bind:class="{ 'hover':  isHover}" v-on:mouseover="onBgHover" v-on:mouseleave="isHover = false">
             <ul class="b-list">
                 <li 
                     class="b-item" 
@@ -37,9 +37,9 @@ Vue.component('app-comp', {
         //ховер на бэкграунд
         onBgHover: function (e) {
             if(e.target.classList.contains('js-hover')){
-                this.isOver = true;
+                this.isHover = true;
             }else{
-                this.isOver = false;
+                this.isHover = false;
             }
         },
 
