@@ -1,4 +1,4 @@
-# 2gis-cards
+# 2gis-cards on Vue.js
 Решение тестового задания
 
 Описание: https://github.com/chaptykov/testTask
